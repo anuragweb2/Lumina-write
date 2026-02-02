@@ -4,77 +4,63 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clarify</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Favicon: Perfect Circle Logo -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><circle cx='256' cy='256' r='256' fill='%23002f24'/><path fill='%23ffffff' d='M468 12 C410 22 340 78 270 148 C200 218 130 310 96 356 C76 382 66 408 68 430 C70 452 92 468 114 466 C138 464 164 452 190 430 C236 396 318 318 380 250 C440 184 486 104 492 52 C494 30 486 14 468 12 Z M244 308 C220 334 206 360 200 390 C198 402 210 408 220 402 C248 386 276 360 302 334 Z M156 444 L184 416 L212 444 L184 472 Z'/></svg>" type="image/svg+xml">
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><circle cx='256' cy='256' r='256' fill='%23002f24'/><path fill='%23ffffff' d='M468 12 C410 22 340 78 270 148 C200 218 130 310 96 356 C76 382 66 408 68 430 C70 452 92 468 114 466 C138 464 164 452 190 430 C236 396 318 318 380 250 C440 184 486 104 492 52 C494 30 486 14 468 12 Z M244 308 C220 334 206 360 200 390 C198 402 210 408 220 402 C248 386 276 360 302 334 Z M156 444 L184 416 L212 444 L184 472 Z'/></svg>"
+      type="image/svg+xml"
+    />
+
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
               brand: {
-                DEFAULT: 'rgb(8, 255, 57)',
-                50: '#f0fdf4',
-                100: '#dcfce7',
-                200: '#bbf7d0',
-                300: '#86efac',
-                400: '#4ade80',
-                500: 'rgb(8, 255, 57)', 
-                600: '#05ce2e',
-                700: '#04a526', // Darker for text usage if needed
-                800: '#065f46',
-                900: '#064e3b',
+                DEFAULT: "rgb(8, 255, 57)",
+                50: "#f0fdf4",
+                100: "#dcfce7",
+                200: "#bbf7d0",
+                300: "#86efac",
+                400: "#4ade80",
+                500: "rgb(8, 255, 57)",
+                600: "#05ce2e",
+                700: "#04a526",
+                800: "#065f46",
+                900: "#064e3b"
               }
             },
             fontFamily: {
-              sans: ['Plus Jakarta Sans', 'sans-serif'],
-            },
-            animation: {
-              'fade-in': 'fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-              'fade-in-up': 'fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-              'scan': 'scan 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite',
-              'border-breathe': 'borderBreathe 4s ease-in-out infinite',
-            },
-            keyframes: {
-              fadeIn: {
-                '0%': { opacity: '0', transform: 'translateY(10px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              },
-              fadeInUp: {
-                '0%': { opacity: '0', transform: 'translateY(20px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              },
-              scan: {
-                '0%': { top: '0%', opacity: '0' },
-                '10%': { opacity: '1' },
-                '90%': { opacity: '1' },
-                '100%': { top: '100%', opacity: '0' },
-              },
-              borderBreathe: {
-                '0%, 100%': { borderColor: '#f1f5f9' }, // slate-100
-                '50%': { borderColor: '#dcfce7' }, // brand-100 (very subtle green)
-              }
+              sans: ["Plus Jakarta Sans", "sans-serif"]
             }
           }
         }
+      };
+    </script>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+          "@google/genai": "https://esm.sh/@google/genai@^1.39.0",
+          "react": "https://esm.sh/react@^19.2.4",
+          "react/": "https://esm.sh/react@^19.2.4/",
+          "react-dom": "https://esm.sh/react-dom@^19.2.4",
+          "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+        }
       }
     </script>
-  <script type="importmap">
-{
-  "imports": {
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
-    "@google/genai": "https://esm.sh/@google/genai@^1.39.0",
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react": "https://esm.sh/react@^19.2.4",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
-</head>
-  <body class="bg-slate-50 text-slate-900 antialiased selection:bg-brand-200 selection:text-slate-900">
+  </head>
+
+  <body class="bg-slate-50 text-slate-900 antialiased">
     <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
-</body>
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>
